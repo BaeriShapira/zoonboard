@@ -6,11 +6,6 @@
   <title>ZoonBoard | Balance Board</title>
   <meta name="description" content="Premium handmade wooden balance board. Train balance, core strength, and coordination." />
   <link rel="icon" type="image/png" href="images/favicon.png" />
-  <meta name="facebook-domain-verification" content="kcazkraz81dqplr1myvbmyjs9u70gk" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -20,35 +15,9 @@
   })(window,document,'script','dataLayer','GTM-KQMVH5TB');</script>
   <!-- End Google Tag Manager -->
 
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '926181283272834');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=926181283272834&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
-
-  <!-- Hotjar Tracking Code for ZoonBoard -->
-  <script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:6642424,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     /* ─── TOKENS ─────────────────────────────────────────── */
@@ -1546,6 +1515,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const id      = params.get('id') || 'turtle';
       const product = products[id] || products['turtle'];
       cartAddItem(id, product.name, product.price, product.images[0]);
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'add_to_cart',
+        product_id: id,
+        product_name: product.name,
+        value: product.price,
+        currency: 'ILS'
+      });
       const btn  = document.getElementById('ctaButton');
       const orig = btn.textContent;
       btn.textContent      = 'Added to cart!';
